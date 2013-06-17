@@ -34,3 +34,14 @@ gem 'thin'
 # gem 'capistrano', group: :development
 
 gem 'pry', group: [:development, :test]
+gem 'rspec-rails', group: [:development, :test]
+gem 'factory_girl_rails', group: [:development, :test]
+gem 'capybara', group: [:test]
+
+group :development do
+  gem 'quiet_assets'
+end
+
+gem 'anjlab-bootstrap-rails', '>= 2.2', require: 'bootstrap-rails'
+gem 'font-awesome-rails'
+gem 'bourbon'

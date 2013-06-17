@@ -1,4 +1,10 @@
 Illuminati::Application.routes.draw do
+  root 'subscriptions#new'
+  resources :subscriptions, only: [:new, :create] do
+    get :done, on: :collection
+  end
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -39,7 +45,7 @@ Illuminati::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'
