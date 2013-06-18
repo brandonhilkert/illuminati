@@ -5,7 +5,7 @@ class CreateSubscriptions < ActiveRecord::Migration
       t.string :topic_1
       t.string :topic_2
       t.string :topic_3
-      t.string :frequency_id, nil: false
+      t.references :frequency, index: true
 
       t.timestamps
     end

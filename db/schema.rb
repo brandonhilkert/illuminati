@@ -27,10 +27,12 @@ ActiveRecord::Schema.define(version: 20130617210543) do
     t.string   "topic_1"
     t.string   "topic_2"
     t.string   "topic_3"
-    t.string   "frequency_id"
+    t.integer  "frequency_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "subscriptions", ["frequency_id"], name: "index_subscriptions_on_frequency_id", using: :btree
 
   create_table "topics", force: true do |t|
     t.string   "name"
