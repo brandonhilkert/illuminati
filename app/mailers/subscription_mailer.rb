@@ -1,14 +1,10 @@
 class SubscriptionMailer < ActionMailer::Base
-  default from: "from@example.com"
+  default from: "hi@illuminati.com"
 
-  # Subject can be set in your I18n file at config/locales/en.yml
-  # with the following lookup:
-  #
-  #   en.subscription_mailer.newsletter.subject
-  #
-  def newsletter
+  def newsletter(subscription_id)
+    @subscription = Subscription.find_by_id(subscription_id)
     @greeting = "Hi"
 
-    mail to: "to@example.org"
+    mail to: "to@example.org", subject: ""
   end
 end
