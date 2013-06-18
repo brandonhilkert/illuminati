@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130617210543) do
+ActiveRecord::Schema.define(version: 20130617210416) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,14 +33,5 @@ ActiveRecord::Schema.define(version: 20130617210543) do
   end
 
   add_index "subscriptions", ["frequency_id"], name: "index_subscriptions_on_frequency_id", using: :btree
-
-  create_table "topics", force: true do |t|
-    t.string   "name"
-    t.integer  "subscription_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "topics", ["subscription_id"], name: "index_topics_on_subscription_id", using: :btree
 
 end

@@ -20,7 +20,7 @@
   <%= f.text_field :topic_3, placeholder: 'Topic 3' %>
   <br />
 
-  <%= f.select :frequency_id, options_from_collection_for_select(Frequency.all, :id, :name) %>
+  <%= f.collection_select :frequency_id, Frequency.all, :id, :name %>
   <br />
   <%= f.submit 'Subscribe', class: "btn btn-large" %>
 <% end %>
