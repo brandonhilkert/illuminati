@@ -24,7 +24,9 @@ ActiveRecord::Schema.define(version: 20130617210543) do
 
   create_table "subscriptions", force: true do |t|
     t.string   "email"
-    t.string   "slug"
+    t.string   "topic_1"
+    t.string   "topic_2"
+    t.string   "topic_3"
     t.string   "frequency_id"
     t.datetime "created_at"
     t.datetime "updated_at"

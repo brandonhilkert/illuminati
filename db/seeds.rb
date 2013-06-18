@@ -6,4 +6,4 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 Frequency.create!(name: 'Daily')
-Frequency.create!(name: 'Monthly')
+Frequency.create!(name: 'Weekly')
