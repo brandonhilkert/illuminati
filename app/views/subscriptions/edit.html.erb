@@ -25,5 +25,5 @@
   <%= f.collection_select :frequency_id, Frequency.all, :id, :name %>
   <br />
   <%= f.submit 'Update', class: "btn btn-large" %>
-  <%= f.submit 'Delete', class: "btn btn-large btn-danger" %>
+  <%= link_to 'Destroy', @subscription, method: :delete, class: "btn btn-large btn-danger", data: { confirm: 'Are you sure?' } %>
 <% end %>
