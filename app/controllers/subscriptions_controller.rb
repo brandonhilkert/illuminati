@@ -25,7 +25,6 @@ class SubscriptionsController < ApplicationController
     else
       render :edit
     end
-
   end
 
   def destroy
