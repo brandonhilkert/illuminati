@@ -35,11 +35,6 @@ class SubscriptionsController < ApplicationController
   def done
   end
 
-  def send_demo_email
-    SubscriptionMailer.newsletter.deliver
-    render nothing: true
-  end
-
   private
 
   def find_subscription
