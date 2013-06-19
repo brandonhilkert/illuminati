@@ -1,10 +1,28 @@
 .errors {
   color: white;
 }
+.subscriptions {
+  input[type='text'], select {
+    height: 30px;
+    width: 250px;
+    padding: 10px;
+    border-radius: 3px;
+    background: rgba(255,255,255, 0.9);
+    font-size: 1.2em;
+  }
+
+  select {
+    width: 270px;
+  }
+
+  form {
+    margin-bottom: 80px;
+  }
+}
 
 .hero {
   background-image: image-url('background.jpg');
-  padding: 6em 0;
+  padding: 3em 0;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
