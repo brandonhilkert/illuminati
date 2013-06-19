@@ -9,19 +9,19 @@ class SubscriptionsController < ApplicationController
     @subscription = Subscription.new(subscription_params)
 
     if @subscription.save
-      redirect_to done_subscriptions_path
+      redirect_to done_subscriptions_path, notice: "Thank you for signing up. We'll be in touch soon!"
     else
       render :new
     end
   end
 
   def edit
-    redirect_to new_subscription_path, notice: "We were unable to find your subscription." unless @subscription.present?
+    redirect_to done_subscription_path, notice: "We were unable to find your subscription." unless @subscription.present?
   end
 
   def update
     if @subscription.update(subscription_params)
-      redirect_to done_subscriptions_path
+      redirect_to done_subscriptions_path, notice: "Your're subscription has been updated."
     else
       render :edit
     end
@@ -29,7 +29,7 @@ class SubscriptionsController < ApplicationController
 
   def destroy
     @subscription.destroy
-    redirect_to new_subscription_path, notice: "You're successfully unsubscribed from your newsletter."
+    redirect_to done_subscriptions_path, notice: "You've successfully unsubscribed from your newsletter."
   end
 
   def done

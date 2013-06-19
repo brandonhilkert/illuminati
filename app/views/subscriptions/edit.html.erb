@@ -1,29 +1,37 @@
-<h1>Edit Subscription</h1>
+<div class='container-fluid hero'>
+  <div class='row-fluid'>
+    <div class='span12'>
+      <h1>Update Subscription</h1>
 
-<%= form_for @subscription do |f| %>
-  <% if @subscription.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@subscription.errors.count, "error") %> prohibited this item from being saved:</h2>
+      <%= form_for @subscription do |f| %>
+        <% if @subscription.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@subscription.errors.count, "error") %> prohibited this item from being saved:</h2>
 
-      <ul>
-      <% @subscription.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+            <ul>
+            <% @subscription.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <%= f.text_field :email, placeholder: 'Email' %>
+        <br />
+        <%= f.text_field :topic_1, placeholder: 'Topic 1' %>
+        <br />
+        <%= f.text_field :topic_2, placeholder: 'Topic 2' %>
+        <br />
+        <%= f.text_field :topic_3, placeholder: 'Topic 3' %>
+        <br />
+
+        <%= f.collection_select :frequency_id, Frequency.all, :id, :name %>
+        <br />
+        <%= f.submit 'Update', class: "btn btn-large" %>
+        <br />
+        <br />
+        <%= link_to 'Unsubscribe', @subscription, method: :delete, data: { confirm: 'Are you sure?' } %>
       <% end %>
-      </ul>
     </div>
-  <% end %>
-
-  <%= f.text_field :email, placeholder: 'Email' %>
-  <br />
-  <%= f.text_field :topic_1, placeholder: 'Topic 1' %>
-  <br />
-  <%= f.text_field :topic_2, placeholder: 'Topic 2' %>
-  <br />
-  <%= f.text_field :topic_3, placeholder: 'Topic 3' %>
-  <br />
-
-  <%= f.collection_select :frequency_id, Frequency.all, :id, :name %>
-  <br />
-  <%= f.submit 'Update', class: "btn btn-large" %>
-  <%= link_to 'Destroy', @subscription, method: :delete, class: "btn btn-large btn-danger", data: { confirm: 'Are you sure?' } %>
-<% end %>
+  </div>
+</div>
