@@ -45,3 +45,4 @@ end
 gem 'anjlab-bootstrap-rails', '>= 2.2', require: 'bootstrap-rails'
 gem 'font-awesome-rails'
 gem 'bourbon'
+gem 'unicorn'
