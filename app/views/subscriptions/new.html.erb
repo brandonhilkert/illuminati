@@ -5,7 +5,7 @@
         <h1>Illuminati</h1>
         <%= form_for @subscription do |f| %>
           <% if @subscription.errors.any? %>
-            <div id="error_explanation">
+            <div class="errors">
               <h2><%= pluralize(@subscription.errors.count, "error") %> prohibited this item from being saved:</h2>
 
               <ul>
