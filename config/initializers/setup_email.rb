@@ -9,7 +9,7 @@ ActionMailer::Base.smtp_settings = {
 }
 
 ActionMailer::Base.default_url_options = {
-  host: ENV["DOMAIN"]
+  host: 'http://localhost:3000'
 }
 
 if ENV["EMAIL_OVERRIDE"]

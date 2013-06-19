@@ -1,10 +1,7 @@
 class SubscriptionMailer < ActionMailer::Base
-  default from: "hi@illuminati.com"
+  default from: "Illuminati <hi@illuminati.com>"
 
-  def newsletter(subscription_id)
-    @subscription = Subscription.find_by_id(subscription_id)
-    @greeting = "Hi"
-
-    mail to: "to@example.org", subject: ""
+  def newsletter
+    mail to: "brandon@pipelinedealsco.com", subject: "Classified competitive briefing - June 19, 2013"
   end
 end

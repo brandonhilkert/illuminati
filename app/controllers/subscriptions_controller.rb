@@ -16,7 +16,7 @@ class SubscriptionsController < ApplicationController
   end
 
   def edit
-    redirect_to done_subscription_path, notice: "We were unable to find your subscription." unless @subscription.present?
+    redirect_to done_subscriptions_path, notice: "We were unable to find your subscription." unless @subscription.present?
   end
 
   def update
@@ -33,6 +33,11 @@ class SubscriptionsController < ApplicationController
   end
 
   def done
+  end
+
+  def send_demo_email
+    SubscriptionMailer.newsletter.deliver
+    render nothing: true
   end
 
   private
